@@ -7,7 +7,7 @@ import { approveReview, rejectReview } from "./actions";
 export const dynamic = "force-dynamic";
 
 export default async function AdminPage() {
-  const supabase = createServerClient();
+  const supabase = await createServerClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
